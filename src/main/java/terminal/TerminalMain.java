@@ -3,6 +3,7 @@ package terminal;
 import java.util.Scanner;
 
 import services.GeminiService;
+import terminalUI.Interface;
 
 public class TerminalMain {
 
@@ -11,9 +12,13 @@ public class TerminalMain {
 		Scanner sc = new Scanner(System.in);
 		GeminiService service = new GeminiService();
 		
+		Interface ui = new Interface();
+		
+		ui.showBanner();
+		
 		while(true) {
 			
-			System.out.println("User: ");
+			ui.userMessage();
 			String prompt = sc.next();
 			
 			if(prompt.equalsIgnoreCase("sair")) {
@@ -22,7 +27,7 @@ public class TerminalMain {
 			
 			String result = service.gerarConteudo(prompt);
 			
-			System.out.println("IA: " + result);
+			ui.IAMessage(result);
 			
 		}
 		
