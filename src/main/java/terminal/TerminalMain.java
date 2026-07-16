@@ -3,7 +3,7 @@ package terminal;
 import java.util.Scanner;
 
 import services.GeminiService;
-import terminalUI.Interface;
+import terminal.ui.Interface;
 
 public class TerminalMain {
 

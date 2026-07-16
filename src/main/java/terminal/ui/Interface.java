@@ -1,4 +1,4 @@
-package terminalUI;
+package terminal.ui;
 
 public class Interface {
 	
