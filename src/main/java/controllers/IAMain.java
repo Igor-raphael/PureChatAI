@@ -21,6 +21,7 @@ public class IAMain {
 			try {
 				
 				String query = exchange.getRequestURI().getQuery();
+				
 				String prompt = query != null ? URLDecoder.decode(query.replace("prompt=",""), StandardCharsets.UTF_8) : "Olá";
 				
 				String result = service.gerarConteudo(prompt);
