@@ -287,10 +287,8 @@ public class InterfaceAPP extends Application {
                 hideGreetingIfNeeded();
                 scrollToBottom();
                 inputField.clear();
-
+                
                 if (arquivoSelecionado != null) {
-                    String resposta = service.uploadArquivo(arquivoSelecionado, message);
-                    appendAiMessage(resposta);
                     
                     // limpa preview e arquivo após envio
                     previewImage.setVisible(false);
@@ -298,12 +296,27 @@ public class InterfaceAPP extends Application {
                     previewImage.setImage(null);
                     arquivoSelecionado = null;
                     
-                } else {
-                    appendAiMessage(service.gerarConteudo(message));
                 }
-
-                System.out.println("Mensagem enviada: " + message);
-            }
+            
+                new Thread(() -> {
+                	String resposta;
+                	
+                	if(arquivoSelecionado != null) {
+                		resposta = service.uploadArquivo(arquivoSelecionado, message);
+                	
+                	} else {
+                		resposta = service.gerarConteudo(message);
+                	}
+ 
+                	Platform.runLater(() -> {
+                	appendAiMessage(resposta); 
+                	});
+                	
+                }).start();
+            
+            } 
+                
+                
         });
 
         // --- monta a barra ---
