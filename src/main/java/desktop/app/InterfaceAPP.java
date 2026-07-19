@@ -118,7 +118,6 @@ public class InterfaceAPP extends Application {
 	public void start(Stage stage) throws Exception {
 		stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.png")));
 		
-		 // ---------- Center content (icon + title) ----------
 	    centerBox = new VBox(18);
 	    centerBox.setAlignment(Pos.CENTER);
 
@@ -128,19 +127,15 @@ public class InterfaceAPP extends Application {
 
 	    centerBox.getChildren().add(title);
 
-	    // ---------- Área de mensagens ----------
 	    ScrollPane messagesArea = createMessagesArea();
 
-	    // centerBox fica sobreposto à área de mensagens (visível só enquanto vazia)
 	    StackPane centerStack = new StackPane(messagesArea, centerBox);
 
-	    // ---------- Barra de input ----------
 	    HBox inputBar = createInputBar();
 	    VBox bottomBox = new VBox(inputBar);
 	    bottomBox.setAlignment(Pos.CENTER);
 	    bottomBox.setPadding(new Insets(0, 0, 40, 0));
 
-	    // ---------- Root com BorderPane ----------
 	    BorderPane root = new BorderPane();
 	    root.setBackground(new Background(new BackgroundFill(
 	            new RadialGradient(
@@ -161,9 +156,6 @@ public class InterfaceAPP extends Application {
 	    stage.show();
     }
  
-
- 
-    // ---------- Input bar with rounded field + send button ----------
     private HBox createInputBar() {
         TextField inputField = new TextField();
         inputField.setPromptText("Pergunte alguma coisa");
@@ -218,7 +210,6 @@ public class InterfaceAPP extends Application {
         bar.setAlignment(Pos.CENTER);
         bar.setPadding(new Insets(0, 20, 0, 20));
  
-        // Subtle drop shadow container feel via background wrapper
         HBox wrapper = new HBox(bar);
         wrapper.setAlignment(Pos.CENTER);
         return wrapper;
