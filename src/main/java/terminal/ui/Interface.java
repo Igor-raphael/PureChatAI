@@ -7,7 +7,7 @@ public class Interface {
         System.out.println("╔══════════════════════════════════════════════════════════════╗");
         System.out.println("║                       PureChatAI v1.0                        ║");
         System.out.println("╠══════════════════════════════════════════════════════════════╣");
-        System.out.println("║ Modelo......: Gemini 2.5 Flash                               ║");
+        System.out.println("║ Modelo......: Gemini 3.1 Flash lite                          ║");
         System.out.println("║ Comandos....: sair                                           ║");
         System.out.println("║                                                              ║");
         System.out.println("╚══════════════════════════════════════════════════════════════╝");

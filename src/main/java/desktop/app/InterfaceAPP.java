@@ -261,7 +261,7 @@ public class InterfaceAPP extends Application {
         previewImage.setFitWidth(160);
         previewImage.setPreserveRatio(true);
         previewImage.setVisible(false);
-        previewImage.setManaged(false); // não ocupa espaço enquanto invisível
+        previewImage.setManaged(false);
 
         // --- ações ---
         inputField.setOnAction(e -> sendButton.fire());
@@ -280,15 +280,19 @@ public class InterfaceAPP extends Application {
         // sendButton: envia texto (com ou sem imagem)
         sendButton.setOnAction(e -> {
             String message = inputField.getText();
-            if (message != null && !message.isBlank()) {
-
+            File imagemUpload = arquivoSelecionado;
+            
+            if ((message == null || message.isBlank()) && imagemUpload == null) {
+            	return;
+            } 
+            	
                 // bolha do usuário (com imagem se houver)
-                messagesContainer.getChildren().add(createUserBubble(message, arquivoSelecionado));
+                messagesContainer.getChildren().add(createUserBubble(message, imagemUpload));
                 hideGreetingIfNeeded();
                 scrollToBottom();
                 inputField.clear();
                 
-                if (arquivoSelecionado != null) {
+                if (imagemUpload != null) {
                     
                     // limpa preview e arquivo após envio
                     previewImage.setVisible(false);
@@ -301,8 +305,8 @@ public class InterfaceAPP extends Application {
                 new Thread(() -> {
                 	String resposta;
                 	
-                	if(arquivoSelecionado != null) {
-                		resposta = service.uploadArquivo(arquivoSelecionado, message);
+                	if(imagemUpload != null) {
+                		resposta = service.uploadArquivo(imagemUpload, message);
                 	
                 	} else {
                 		resposta = service.gerarConteudo(message);
@@ -314,7 +318,7 @@ public class InterfaceAPP extends Application {
                 	
                 }).start();
             
-            } 
+            
                 
                 
         });
