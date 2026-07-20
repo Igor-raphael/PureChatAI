@@ -1,6 +1,6 @@
 # 🤖 PureChatAI
 
-> Um chatbot desktop em Java, feito para rodar leve até em máquinas fracas — nascido de um experimento simples sobre como integrar Java com um modelo de IA generativa, sem frameworks, sem mágica, só HTTP e Java.
+> Um chatbot desktop em Java, feito para rodar leve até em máquinas fracas, nascido de um experimento simples sobre como integrar Java com um modelo de IA generativa, sem frameworks, sem mágica, só HTTP e Java.
 
 ![Java](https://img.shields.io/badge/Java-21-007396?style=flat&logo=openjdk&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Google%20Gemini-API-4285F4?style=flat&logo=google&logoColor=white)
@@ -12,13 +12,13 @@
 
 ## 🎯 Sobre o projeto
 
-**PureChatAI** começou como um experimento simples: entender, na raiz, como integrar uma aplicação Java com um modelo de IA generativa através de APIs externas — um servidor HTTP construído com a API nativa do Java (`com.sun.net.httpserver.HttpServer`), conversando diretamente com a **API do Google Gemini**, sem Spring, sem framework web.
+**PureChatAI** começou como um experimento simples: entender, na raiz, como integrar uma aplicação Java com um modelo de IA generativa através de APIs externas, um servidor HTTP construído com a API nativa do Java (`com.sun.net.httpserver.HttpServer`), conversando diretamente com a **API do Google Gemini**, sem Spring, sem framework web.
 
-Durante o desenvolvimento, um problema prático ficou evidente: rodar tudo em um notebook com poucos recursos (4GB de RAM) enquanto o navegador fazia as requisições de IA tornava o processo lento e pesado. Isso foi o ponto de virada — o projeto deixou de ser só um estudo de integração e passou a ter um propósito real: **um chatbot leve, que não dependesse de navegador nem de infraestrutura pesada para funcionar bem.**
+Durante o desenvolvimento, um problema prático ficou evidente: rodar tudo em um notebook com poucos recursos (4GB de RAM) enquanto o navegador fazia as requisições de IA tornava o processo lento e pesado. Isso foi o ponto de virada, o projeto deixou de ser só um estudo de integração e passou a ter um propósito real: **um chatbot leve, que não dependesse de navegador nem de infraestrutura pesada para funcionar bem.**
 
 Hoje o repositório é organizado em três módulos independentes, cada um em sua própria pasta:
 
-- **`desktop/`** — a interface **JavaFX** (foco atual do projeto), com bolhas de mensagem, upload de imagens e respostas formatadas — futuramente empacotada como `.exe`
+- **`desktop/`** — a interface **JavaFX** (foco atual do projeto), com bolhas de mensagem, upload de imagens e respostas formatadas, futuramente empacotada como `.exe`
 - **`terminal/`** — versão via linha de comando, direto no console
 - **`web/`** — versão original via navegador (rota HTTP `/ai`), mantida como alternativa mais simples
 
@@ -133,7 +133,7 @@ export GEMINI_API_KEY="SUA_API_KEY"
 
 > Após configurar a variável de ambiente, reinicie sua IDE ou terminal.
 
-> 💡 Está prevista uma tela de configuração dentro do próprio app (API Key + modelo de IA), acessível na primeira execução e também depois via um ícone de engrenagem na tela de chat — permitindo trocar de credenciais ou modelo sem mexer em código ou variáveis de ambiente.
+> 💡 Está prevista uma tela de configuração dentro do próprio app (API Key + modelo de IA), acessível na primeira execução e também depois via um ícone de engrenagem na tela de chat, permitindo trocar de credenciais ou modelo sem mexer em código ou variáveis de ambiente.
 
 ---
 
@@ -258,8 +258,6 @@ A meta final é ter um chatbot desktop funcional, leve, fácil de distribuir e c
 ## 👤 Autor
 
 **Igor Rafael Silva Coelho**
-Full Stack Software Engineer (Java/Angular)
+Full Stack Software Engineer
 
 ---
-
-⭐ Se esse projeto te ajudou a entender melhor a integração de Java com IA generativa em um app desktop, deixa uma estrela no repositório!
